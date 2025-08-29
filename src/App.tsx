@@ -150,7 +150,9 @@ function App() {
                   <div className={`absolute top-full left-0 mt-2 w-64 rounded-lg shadow-lg border z-50 ${
                     isDarkMode ? 'bg-theme-dark-bg border-gray-800' : 'bg-theme-light-bg border-gray-200'
                   }`}>
-                    <div className="py-2">
+                    <div className="py-2 max-h-80 overflow-y-auto scrollbar-thin scrollbar-thumb-rounded ${
+                      isDarkMode ? 'scrollbar-thumb-gray-600 scrollbar-track-gray-800' : 'scrollbar-thumb-gray-300 scrollbar-track-gray-100'
+                    }">
                       {contentItems.map((item) => {
                         const ItemIcon = iconMap[item.icon];
                         return (
