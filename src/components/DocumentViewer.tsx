@@ -79,19 +79,7 @@ export function DocumentViewer({
             </p>
           </div>
           <div className="flex space-x-2">
-            {documentData.sections.slice(0, 4).map((section) => {
-              const Icon = sectionIcons[section.id] || Code;
-              return (
-                <div
-                  key={section.id}
-                  className={`p-3 rounded-lg ${
-                    isDarkMode ? 'bg-gray-800' : 'bg-gray-100'
-                  }`}
-                >
-                  <Icon className="w-6 h-6 text-blue-600" />
-                </div>
-              );
-            })}
+           
           </div>
         </div>
       </div>

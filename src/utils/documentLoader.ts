@@ -32,9 +32,27 @@ export const contentItems: ContentItem[] = [
     icon: 'Code'
   },
   {
+    id: 'react-500',
+    title: 'React 500',
+    filename: 'react-500.md',
+    icon: 'Code'
+  },
+  {
     id: 'nodejs',
     title: 'Node.js & Express',
     filename: 'nodejs.md',
+    icon: 'Server'
+  },
+  {
+    id: 'nodejs-100',
+    title: 'Node.js 100',
+    filename: 'nodejs-100.md',
+    icon: 'Server'
+  },
+  {
+    id: 'express-100',
+    title: 'Express 100',
+    filename: 'express-100.md',
     icon: 'Server'
   },
   {
@@ -44,9 +62,21 @@ export const contentItems: ContentItem[] = [
     icon: 'Database'
   },
   {
+    id: 'sql-100',
+    title: 'SQL 100',
+    filename: 'sql-100.md',
+    icon: 'Database'
+  },
+  {
     id: 'api-development',
     title: 'API Development',
     filename: 'api-development.md',
+    icon: 'Globe'
+  },
+  {
+    id: 'api-design-50',
+    title: 'API Design 50',
+    filename: 'api-design-50.md',
     icon: 'Globe'
   },
   {
@@ -67,6 +97,199 @@ export const contentItems: ContentItem[] = [
     filename: 'python.md',
     icon: 'Code'
   },
+  {
+    id: 'python-100',
+    title: 'Python 100',
+    filename: 'python-100.md',
+    icon: 'Code'
+  },
+  {
+    id: 'python-basics',
+    title: 'Python Basics',
+    filename: 'python-basics.md',
+    icon: 'Code'
+  },
+  {
+    id: 'javascript-100',
+    title: 'JavaScript 100',
+    filename: 'javascript-100.md',
+    icon: 'Code'
+  },
+  {
+    id: 'typescript-100',
+    title: 'TypeScript 100',
+    filename: 'typescript-100.md',
+    icon: 'Code'
+  },
+  {
+    id: 'system-design',
+    title: 'System Design',
+    filename: 'system-design.md',
+    icon: 'Network'
+  },
+  {
+    id: 'bytebytego-system-design',
+    title: 'ByteByteGo System Design',
+    filename: 'bytebytego-system-design.md',
+    icon: 'Network'
+  },
+  {
+    id: 'grokking-system-design',
+    title: 'Grokking System Design',
+    filename: 'grokking-system-design.md',
+    icon: 'Network'
+  },
+  {
+    id: 'frontend-system-design',
+    title: 'Frontend System Design',
+    filename: 'frontend-system-design.md',
+    icon: 'Layout'
+  },
+  {
+    id: 'frontend-checklist',
+    title: 'Frontend Checklist',
+    filename: 'frontend-checklist.md',
+    icon: 'CheckSquare'
+  },
+  {
+    id: 'software-architechture',
+    title: 'Software Architecture',
+    filename: 'software-architechture.md',
+    icon: 'Layers'
+  },
+  {
+    id: 'reactive-systems-32',
+    title: 'Reactive Systems 32',
+    filename: 'reactive-systems-32.md',
+    icon: 'Activity'
+  },
+  // DSA Content
+  {
+    id: 'dsa-basics',
+    title: 'DSA Basics',
+    filename: 'dsa-basics.md',
+    icon: 'FileText'
+  },
+  {
+    id: 'dsa-question-list',
+    title: 'DSA Question List',
+    filename: 'dsa-question-list.md',
+    icon: 'List'
+  },
+  {
+    id: 'dsa-coding-interview-uni',
+    title: 'DSA Coding Interview University',
+    filename: 'dsa-coding-interview-uni.md',
+    icon: 'BookOpen'
+  },
+  {
+    id: 'grokking-dsa-shortcut',
+    title: 'Grokking DSA Shortcut',
+    filename: 'grokking-dsa-shortcut.md',
+    icon: 'FastForward'
+  },
+  {
+    id: 'array-dsa',
+    title: 'Arrays DSA',
+    filename: 'array-dsa.md',
+    icon: 'Grid'
+  },
+  {
+    id: 'string-dsa',
+    title: 'String DSA',
+    filename: 'string-dsa.md',
+    icon: 'Type'
+  },
+  {
+    id: 'linked-list-dsa',
+    title: 'Linked List DSA',
+    filename: 'linked-list-dsa.md',
+    icon: 'Link'
+  },
+  {
+    id: 'stack-dsa',
+    title: 'Stack DSA',
+    filename: 'stack-dsa.md',
+    icon: 'Layers'
+  },
+  {
+    id: 'queue-dsa',
+    title: 'Queue DSA',
+    filename: 'queue-dsa.md',
+    icon: 'AlignLeft'
+  },
+  {
+    id: 'binary-tree-dsa',
+    title: 'Binary Tree DSA',
+    filename: 'binary-tree-dsa.md',
+    icon: 'GitBranch'
+  },
+  {
+    id: 'heap-dsa',
+    title: 'Heap DSA',
+    filename: 'heap-dsa.md',
+    icon: 'Triangle'
+  },
+  {
+    id: 'hashtable-dsa',
+    title: 'Hash Table DSA',
+    filename: 'hashtable-dsa.md',
+    icon: 'Hash'
+  },
+  {
+    id: 'sorting-dsa',
+    title: 'Sorting Algorithms',
+    filename: 'sorting-dsa.md',
+    icon: 'BarChart2'
+  },
+  {
+    id: 'searchin-dsa',
+    title: 'Searching Algorithms',
+    filename: 'searchin-dsa.md',
+    icon: 'Search'
+  },
+  {
+    id: 'dynamic-programming',
+    title: 'Dynamic Programming',
+    filename: 'dynamic-programming.md',
+    icon: 'Sliders'
+  },
+  {
+    id: 'greedy-dsa',
+    title: 'Greedy Algorithms',
+    filename: 'greedy-dsa.md',
+    icon: 'TrendingUp'
+  },
+  {
+    id: 'backtracking-dsa',
+    title: 'Backtracking',
+    filename: 'backtracking-dsa.md',
+    icon: 'CornerUpLeft'
+  },
+  {
+    id: 'divide-n-conquer-dsa',
+    title: 'Divide & Conquer',
+    filename: 'divide-n-conquer-dsa.md',
+    icon: 'Scissors'
+  },
+  {
+    id: 'recursion-dsa',
+    title: 'Recursion',
+    filename: 'recursion-dsa.md',
+    icon: 'Repeat'
+  },
+  {
+    id: 'bit-manipulation',
+    title: 'Bit Manipulation',
+    filename: 'bit-manipulation.md',
+    icon: 'Terminal'
+  },
+  {
+    id: 'blockchain-dsa',
+    title: 'Blockchain DSA',
+    filename: 'blockchain-dsa.md',
+    icon: 'Link2'
+  }
 ];
 
 // Parse markdown content to extract sections

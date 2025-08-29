@@ -115,6 +115,15 @@ export function MarkdownRenderer({
             </h2>
           </div>
         );
+      } else if (line.startsWith('#### ')) {
+        const title = line.slice(5);
+        elements.push(
+          <h4 key={i} className={`text-lg font-bold mt-6 mb-2 ${
+            isDarkMode ? 'text-dark-muted' : 'text-gray-800'
+          }`}>
+            {title}
+          </h4>
+        );
       } else if (line.startsWith('### ')) {
         const title = line.slice(4);
         elements.push(
@@ -164,11 +173,34 @@ export function MarkdownRenderer({
           </p>
         );
       } else if (line.trim()) {
+        // Process bold text within ** ** patterns
+        const parts = [];
+        let lastIndex = 0;
+        let boldPattern = /\*\*(.*?)\*\*/g;
+        let match;
+        
+        while ((match = boldPattern.exec(line)) !== null) {
+          // Add text before the match
+          if (match.index > lastIndex) {
+            parts.push(line.substring(lastIndex, match.index));
+          }
+          
+          // Add the bold text
+          parts.push(<span key={`bold-${match.index}`} className="font-bold">{match[1]}</span>);
+          
+          lastIndex = match.index + match[0].length;
+        }
+        
+        // Add any remaining text
+        if (lastIndex < line.length) {
+          parts.push(line.substring(lastIndex));
+        }
+        
         elements.push(
           <p key={i} className={`mb-4 leading-relaxed ${
             isDarkMode ? 'text-dark-subtle' : 'text-gray-700'
           }`}>
-            {line}
+            {parts.length > 0 ? parts : line}
           </p>
         );
       }
