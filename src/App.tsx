@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Search, BookOpen, Moon, Sun, Bookmark, FileText, Code, Database, Globe, Shield, Zap, Settings, ChevronDown, Server } from 'lucide-react';
+import { Search, BookOpen, Moon, Sun, FileText, Code, Database, Globe, Zap, Settings, ChevronDown, Server, Cloud } from 'lucide-react';
 import { DocumentViewer } from './components/DocumentViewer';
 import { TableOfContents } from './components/TableOfContents';
 import { SearchPanel } from './components/SearchPanel';
@@ -14,7 +14,8 @@ const iconMap: Record<string, React.ComponentType<any>> = {
   Server,
   Database,
   Globe,
-  Zap
+  Zap,
+  Cloud
 };
 
 function App() {
@@ -103,18 +104,18 @@ function App() {
 
   return (
     <div className={`min-h-screen transition-colors duration-300 ${
-      isDarkMode ? 'bg-gray-900 text-gray-100' : 'bg-gray-50 text-gray-900'
+      isDarkMode ? 'dark bg-theme-dark-bg text-theme-dark-text' : 'bg-theme-light-bg text-theme-light-text'
     }`}>
       {/* Header */}
       <header className={`sticky top-0 z-50 border-b transition-colors duration-300 ${
-        isDarkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'
+        isDarkMode ? 'bg-theme-dark-bg border-gray-800' : 'bg-theme-light-bg border-gray-200'
       }`}>
         <div className="flex items-center justify-between px-6 py-4">
           <div className="flex items-center space-x-4">
             <button
               onClick={() => setSidebarOpen(!sidebarOpen)}
               className={`p-2 rounded-lg hover:bg-opacity-80 transition-colors ${
-                isDarkMode ? 'hover:bg-gray-700' : 'hover:bg-gray-100'
+                isDarkMode ? 'hover:bg-gray-800' : 'hover:bg-gray-100'
               }`}
             >
               <FileText className="w-5 h-5" />
@@ -133,7 +134,7 @@ function App() {
                     setContentDropdownOpen(!contentDropdownOpen);
                   }}
                   className={`flex items-center space-x-2 px-3 py-2 rounded-lg hover:bg-opacity-80 transition-colors ${
-                    isDarkMode ? 'hover:bg-gray-700' : 'hover:bg-gray-100'
+                    isDarkMode ? 'hover:bg-gray-800' : 'hover:bg-gray-100'
                   }`}
                 >
                   {IconComponent && <IconComponent className="w-4 h-4" />}
@@ -147,7 +148,7 @@ function App() {
                 
                 {contentDropdownOpen && (
                   <div className={`absolute top-full left-0 mt-2 w-64 rounded-lg shadow-lg border z-50 ${
-                    isDarkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'
+                    isDarkMode ? 'bg-theme-dark-bg border-gray-800' : 'bg-theme-light-bg border-gray-200'
                   }`}>
                     <div className="py-2">
                       {contentItems.map((item) => {
@@ -158,8 +159,8 @@ function App() {
                             onClick={() => handleContentChange(item.id)}
                             className={`w-full flex items-center space-x-3 px-4 py-3 text-left hover:bg-opacity-80 transition-colors ${
                               item.id === currentContentId
-                                ? (isDarkMode ? 'bg-gray-700' : 'bg-gray-100')
-                                : (isDarkMode ? 'hover:bg-gray-700' : 'hover:bg-gray-50')
+                                ? (isDarkMode ? 'bg-gray-800' : 'bg-gray-100')
+                                : (isDarkMode ? 'hover:bg-gray-800' : 'hover:bg-gray-50')
                             }`}
                           >
                             {ItemIcon && <ItemIcon className="w-4 h-4" />}
@@ -178,7 +179,7 @@ function App() {
             <button
               onClick={() => setSearchOpen(!searchOpen)}
               className={`p-2 rounded-lg hover:bg-opacity-80 transition-colors ${
-                isDarkMode ? 'hover:bg-gray-700' : 'hover:bg-gray-100'
+                isDarkMode ? 'hover:bg-gray-800' : 'hover:bg-gray-100'
               }`}
             >
               <Search className="w-5 h-5" />
@@ -186,7 +187,7 @@ function App() {
             <button
               onClick={() => setNotesOpen(!notesOpen)}
               className={`p-2 rounded-lg hover:bg-opacity-80 transition-colors ${
-                isDarkMode ? 'hover:bg-gray-700' : 'hover:bg-gray-100'
+                isDarkMode ? 'hover:bg-gray-800' : 'hover:bg-gray-100'
               }`}
             >
               <Settings className="w-5 h-5" />
@@ -194,7 +195,7 @@ function App() {
             <button
               onClick={() => setIsDarkMode(!isDarkMode)}
               className={`p-2 rounded-lg hover:bg-opacity-80 transition-colors ${
-                isDarkMode ? 'hover:bg-gray-700' : 'hover:bg-gray-100'
+                isDarkMode ? 'hover:bg-gray-800' : 'hover:bg-gray-100'
               }`}
             >
               {isDarkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
@@ -208,7 +209,7 @@ function App() {
         {/* Sidebar */}
         <aside className={`fixed left-0 top-16 h-[calc(100vh-4rem)] w-80 transform transition-transform duration-300 ease-in-out z-40 ${
           sidebarOpen ? 'translate-x-0' : '-translate-x-full'
-        } ${isDarkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'} border-r overflow-y-auto`}>
+        } ${isDarkMode ? 'bg-theme-dark-bg border-gray-800' : 'bg-theme-light-bg border-gray-200'} border-r overflow-y-auto`}>
           {currentDocument && (
             <TableOfContents
               sections={currentDocument.sections}
@@ -229,7 +230,7 @@ function App() {
             {loading ? (
               <div className="flex items-center justify-center py-12">
                 <div className={`animate-spin rounded-full h-8 w-8 border-b-2 ${
-                  isDarkMode ? 'border-gray-300' : 'border-gray-900'
+                  isDarkMode ? 'border-theme-dark-text' : 'border-theme-light-text'
                 }`}></div>
                 <span className="ml-3 text-lg">Loading document...</span>
               </div>
@@ -243,7 +244,9 @@ function App() {
               />
             ) : (
               <div className="text-center py-12">
-                <p className="text-lg text-gray-500">No document loaded</p>
+                <p className={`text-lg ${
+                  isDarkMode ? 'text-gray-400' : 'text-gray-500'
+                }`}>No document loaded</p>
               </div>
             )}
           </div>

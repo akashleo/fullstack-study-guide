@@ -88,16 +88,16 @@ export function SearchPanel({ documentData, isOpen, onClose, isDarkMode }: Searc
 
       {/* Panel */}
       <div className={`relative ml-auto w-96 h-full shadow-2xl ${
-        isDarkMode ? 'bg-gray-800' : 'bg-white'
+        isDarkMode ? 'bg-theme-dark-bg' : 'bg-theme-light-bg'
       }`}>
         {/* Header */}
         <div className={`flex items-center justify-between p-4 border-b ${
-          isDarkMode ? 'border-gray-700' : 'border-gray-200'
+          isDarkMode ? 'border-gray-800' : 'border-gray-200'
         }`}>
           <div className="flex items-center space-x-2">
             <Search className="w-5 h-5 text-blue-600" />
             <h2 className={`font-semibold ${
-              isDarkMode ? 'text-gray-100' : 'text-gray-900'
+              isDarkMode ? 'text-theme-dark-text' : 'text-theme-light-text'
             }`}>
               Search Document
             </h2>
@@ -105,7 +105,7 @@ export function SearchPanel({ documentData, isOpen, onClose, isDarkMode }: Searc
           <button
             onClick={onClose}
             className={`p-2 rounded-lg hover:bg-opacity-80 transition-colors ${
-              isDarkMode ? 'hover:bg-gray-700' : 'hover:bg-gray-100'
+              isDarkMode ? 'hover:bg-gray-800' : 'hover:bg-gray-100'
             }`}
           >
             <X className="w-4 h-4" />
@@ -123,8 +123,8 @@ export function SearchPanel({ documentData, isOpen, onClose, isDarkMode }: Searc
               placeholder="Search for concepts, code, or topics..."
               className={`w-full pl-10 pr-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 ${
                 isDarkMode 
-                  ? 'bg-gray-700 border-gray-600 text-gray-100 placeholder-gray-400'
-                  : 'bg-white border-gray-300 text-gray-900 placeholder-gray-500'
+                  ? 'bg-theme-dark-bg border-gray-700 text-theme-dark-text placeholder-gray-400'
+                  : 'bg-theme-light-bg border-gray-300 text-theme-light-text placeholder-gray-500'
               }`}
               autoFocus
             />
@@ -148,21 +148,21 @@ export function SearchPanel({ documentData, isOpen, onClose, isDarkMode }: Searc
                 onClick={() => scrollToResult(result.sectionId)}
                 className={`w-full p-3 rounded-lg border text-left transition-colors hover:shadow-md ${
                   isDarkMode 
-                    ? 'bg-gray-700 border-gray-600 hover:bg-gray-600'
+                    ? 'bg-gray-800 border-gray-700 hover:bg-gray-700'
                     : 'bg-gray-50 border-gray-200 hover:bg-gray-100'
                 }`}
               >
                 <div className="flex items-center space-x-2 mb-2">
                   <FileText className="w-4 h-4 text-blue-600" />
                   <span className={`text-sm font-medium ${
-                    isDarkMode ? 'text-gray-200' : 'text-gray-700'
+                    isDarkMode ? 'text-theme-dark-text' : 'text-theme-light-text'
                   }`}>
                     {result.sectionTitle}
                   </span>
                 </div>
                 <div 
                   className={`text-xs leading-relaxed ${
-                    isDarkMode ? 'text-gray-300' : 'text-gray-600'
+                    isDarkMode ? 'text-theme-dark-text' : 'text-theme-light-text'
                   }`}
                   dangerouslySetInnerHTML={{ __html: result.snippet.replace('<mark>', '<mark class="bg-yellow-200 text-gray-900 px-1 rounded">').replace('</mark>', '</mark>') }}
                 />

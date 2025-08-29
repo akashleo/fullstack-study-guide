@@ -10,7 +10,7 @@
 
   body {
     line-height: 1.6;
-    @apply bg-light-primary text-light-text dark:bg-dark-primary dark:text-dark-text transition-colors duration-200;
+    @apply bg-theme-light-bg text-theme-light-text dark:bg-theme-dark-bg dark:text-theme-dark-text transition-colors duration-200;
   }
 
   /* Custom scrollbar */
@@ -19,50 +19,50 @@
   }
 
   ::-webkit-scrollbar-track {
-    @apply bg-light-secondary dark:bg-dark-secondary;
+    @apply bg-gray-200 dark:bg-gray-800;
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-light-muted dark:bg-dark-muted rounded-full;
+    @apply bg-gray-400 dark:bg-gray-600 rounded-full;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    @apply bg-light-accent/50 dark:bg-dark-accent/50;
+    @apply bg-blue-500/50 dark:bg-blue-400/50;
   }
 }
 
 @layer components {
   .prose {
-    @apply text-light-text dark:text-dark-text font-sans;
+    @apply text-theme-light-text dark:text-theme-dark-text font-sans;
     max-width: none;
   }
 
   .prose h1 {
-    @apply text-3xl font-bold text-light-text dark:text-dark-text mb-6 mt-8;
+    @apply text-3xl font-bold text-theme-light-text dark:text-theme-dark-text mb-6 mt-8;
   }
 
   .prose h2 {
-    @apply text-2xl font-semibold text-light-text dark:text-dark-text mb-4 mt-8;
+    @apply text-2xl font-semibold text-theme-light-text dark:text-theme-dark-text mb-4 mt-8;
   }
 
   .prose h3 {
-    @apply text-xl font-semibold text-light-text dark:text-dark-text mb-3 mt-6;
+    @apply text-xl font-semibold text-theme-light-text dark:text-theme-dark-text mb-3 mt-6;
   }
 
   .prose p {
-    @apply text-light-muted dark:text-dark-muted mb-4 leading-relaxed;
+    @apply text-theme-light-text dark:text-theme-dark-text mb-4 leading-relaxed;
   }
 
   .prose li {
-    @apply text-light-muted dark:text-dark-muted mb-2;
+    @apply text-theme-light-text dark:text-theme-dark-text mb-2;
   }
 
   .prose code {
-    @apply bg-light-secondary dark:bg-dark-secondary text-light-text dark:text-dark-text px-1.5 py-0.5 rounded text-sm font-mono;
+    @apply bg-gray-100 dark:bg-gray-800 text-theme-light-text dark:text-theme-dark-text px-1.5 py-0.5 rounded text-sm font-mono;
   }
 
   .prose pre {
-    @apply bg-light-secondary dark:bg-dark-secondary text-light-text dark:text-dark-text p-4 rounded-lg overflow-x-auto mb-4;
+    @apply bg-gray-100 dark:bg-gray-800 text-theme-light-text dark:text-theme-dark-text p-4 rounded-lg overflow-x-auto mb-4;
   }
 
   .prose pre code {
@@ -70,15 +70,15 @@
   }
 
   .prose blockquote {
-    @apply border-l-4 border-light-accent dark:border-dark-accent pl-4 italic text-light-muted dark:text-dark-muted my-4;
+    @apply border-l-4 border-blue-500 dark:border-blue-400 pl-4 italic text-theme-light-text dark:text-theme-dark-text my-4;
   }
 
   .prose strong {
-    @apply font-semibold text-light-text dark:text-dark-text;
+    @apply font-semibold text-theme-light-text dark:text-theme-dark-text;
   }
 
   .prose em {
-    @apply italic text-light-muted dark:text-dark-muted;
+    @apply italic text-theme-light-text dark:text-theme-dark-text;
   }
 
   .prose ul {
@@ -90,7 +90,7 @@
   }
 
   .prose ul li::before {
-    @apply absolute left-0 top-2 w-2 h-2 bg-light-accent dark:bg-dark-accent rounded-full;
+    @apply absolute left-0 top-2 w-2 h-2 bg-blue-500 dark:bg-blue-400 rounded-full;
     content: '';
   }
 
@@ -127,16 +127,16 @@
 
   /* Highlight animation */
   mark {
-    @apply bg-light-accent/30 dark:bg-dark-accent/30 text-light-text dark:text-dark-text px-1 rounded;
+    @apply bg-yellow-200/60 dark:bg-yellow-400/30 text-theme-light-text dark:text-theme-dark-text px-1 rounded;
     animation: highlight 0.5s ease-in-out;
   }
 
   @keyframes highlight {
     0% {
-      @apply bg-light-accent/50 dark:bg-dark-accent/50;
+      @apply bg-yellow-200/80 dark:bg-yellow-400/50;
     }
     100% {
-      @apply bg-light-accent/30 dark:bg-dark-accent/30;
+      @apply bg-yellow-200/60 dark:bg-yellow-400/30;
     }
   }
 }

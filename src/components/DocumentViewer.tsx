@@ -62,18 +62,18 @@ export function DocumentViewer({
       {/* Document Header */}
       <div className={`mb-8 p-6 rounded-xl border ${
         isDarkMode 
-          ? 'bg-gray-800 border-gray-700' 
-          : 'bg-white border-gray-200'
+          ? 'bg-theme-dark-bg border-gray-800' 
+          : 'bg-theme-light-bg border-gray-200'
       } shadow-sm`}>
         <div className="flex items-center justify-between">
           <div>
             <h1 className={`text-3xl font-bold mb-2 ${
-              isDarkMode ? 'text-dark-text' : 'text-red-900'
+              isDarkMode ? 'text-theme-dark-text' : 'text-theme-light-text'
             }`}>
               {documentData.title}
             </h1>
             <p className={`${
-              isDarkMode ? 'text-dark-muted' : 'text-red-600'
+              isDarkMode ? 'text-gray-400' : 'text-gray-600'
             }`}>
               Comprehensive guide for modern full-stack development
             </p>
@@ -85,7 +85,7 @@ export function DocumentViewer({
                 <div
                   key={section.id}
                   className={`p-3 rounded-lg ${
-                    isDarkMode ? 'bg-gray-700' : 'bg-gray-100'
+                    isDarkMode ? 'bg-gray-800' : 'bg-gray-100'
                   }`}
                 >
                   <Icon className="w-6 h-6 text-blue-600" />
@@ -111,11 +111,11 @@ export function DocumentViewer({
       {/* Section Navigation */}
       <div className={`mt-12 p-6 rounded-xl border ${
         isDarkMode 
-          ? 'bg-gray-800 border-gray-700' 
-          : 'bg-white border-gray-200'
+          ? 'bg-theme-dark-bg border-gray-800' 
+          : 'bg-theme-light-bg border-gray-200'
       } shadow-sm`}>
         <h3 className={`text-lg font-semibold mb-4 ${
-          isDarkMode ? 'text-dark-text' : 'text-gray-900'
+          isDarkMode ? 'text-theme-dark-text' : 'text-theme-light-text'
         }`}>
           Quick Navigation
         </h3>
@@ -137,7 +137,7 @@ export function DocumentViewer({
                       ? 'bg-blue-900 border-blue-600 shadow-lg'
                       : 'bg-blue-50 border-blue-200 shadow-lg'
                     : isDarkMode
-                      ? 'bg-gray-700 border-gray-600 hover:bg-gray-600'
+                      ? 'bg-gray-800 border-gray-700 hover:bg-gray-700'
                       : 'bg-gray-50 border-gray-200 hover:bg-gray-100'
                 }`}
               >
@@ -158,7 +158,7 @@ export function DocumentViewer({
                   activeSection === section.id ? 'text-blue-600' : 'text-gray-500'
                 }`} />
                 <span className={`text-sm font-medium ${
-                  isDarkMode ? 'text-dark-muted' : 'text-gray-700'
+                  isDarkMode ? 'text-theme-dark-text' : 'text-theme-light-text'
                 }`}>
                   {section.title}
                 </span>

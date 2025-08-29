@@ -8,23 +8,15 @@ export default {
         sans: ['Poppins', 'sans-serif'],
       },
       colors: {
-        // Light theme colors
-        light: {
-          primary: '#ffffff',
-          secondary: '#f3f4f6',
-          accent: '#3b82f6',
-          text: '#1f2937',
-          muted: '#6b7280',
-        },
-        // Dark theme colors
-        dark: {
-          primary: '#1f2937',
-          secondary: '#111827',
-          accent: '#60a5fa',
-          // Warm white color palette for text
-          text: '#f5f0e6',       // Primary warm white (ivory)
-          muted: '#e6dfd0',      // Secondary warm white (cream)
-          subtle: '#d8cfc0',     // Tertiary warm white (light beige)
+        // Simple theme colors
+        theme: {
+          // Light mode
+          'light-bg': '#ffffff',
+          'light-text': '#000000',
+          
+          // Dark mode  
+          'dark-bg': '#000000',
+          'dark-text': '#f5f5dc', // warm white (beige)
         },
       },
     },

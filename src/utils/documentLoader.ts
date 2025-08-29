@@ -55,6 +55,18 @@ export const contentItems: ContentItem[] = [
     filename: 'fastapi.md',
     icon: 'Zap'
   },
+  {
+    id: 'gcp',
+    title: 'Google Cloud Platform',
+    filename: 'gcp.md',
+    icon: 'Cloud'
+  },
+  {
+    id: 'python',
+    title: 'Python',
+    filename: 'python.md',
+    icon: 'Code'
+  },
 ];
 
 // Parse markdown content to extract sections

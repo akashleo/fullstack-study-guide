@@ -45,7 +45,7 @@ export function TableOfContents({
   return (
     <nav className="p-6">
       <h2 className={`text-lg font-semibold mb-4 ${
-        isDarkMode ? 'text-gray-100' : 'text-gray-900'
+        isDarkMode ? 'text-theme-dark-text' : 'text-theme-light-text'
       }`}>
         Table of Contents
       </h2>
@@ -56,13 +56,13 @@ export function TableOfContents({
           <button
             onClick={() => toggleSection('bookmarks')}
             className={`flex items-center justify-between w-full p-2 rounded-lg transition-colors ${
-              isDarkMode ? 'hover:bg-gray-700' : 'hover:bg-gray-100'
+              isDarkMode ? 'hover:bg-gray-800' : 'hover:bg-gray-100'
             }`}
           >
             <div className="flex items-center space-x-2">
               <BookmarkCheck className="w-4 h-4 text-amber-500" />
               <span className={`font-medium ${
-                isDarkMode ? 'text-gray-200' : 'text-gray-700'
+                isDarkMode ? 'text-theme-dark-text' : 'text-theme-light-text'
               }`}>
                 Bookmarks ({bookmarks.length})
               </span>
@@ -90,8 +90,8 @@ export function TableOfContents({
                             ? 'bg-blue-900 text-blue-200'
                             : 'bg-blue-100 text-blue-800'
                           : isDarkMode
-                            ? 'text-gray-300 hover:bg-gray-700'
-                            : 'text-gray-600 hover:bg-gray-100'
+                            ? 'text-theme-dark-text hover:bg-gray-800'
+                            : 'text-theme-light-text hover:bg-gray-100'
                       }`}
                     >
                       <span className="text-sm">{section.title}</span>
@@ -109,11 +109,11 @@ export function TableOfContents({
         <button
           onClick={() => toggleSection('main')}
           className={`flex items-center justify-between w-full p-2 rounded-lg transition-colors ${
-            isDarkMode ? 'hover:bg-gray-700' : 'hover:bg-gray-100'
+            isDarkMode ? 'hover:bg-gray-800' : 'hover:bg-gray-100'
           }`}
         >
           <span className={`font-medium ${
-            isDarkMode ? 'text-gray-200' : 'text-gray-700'
+            isDarkMode ? 'text-theme-dark-text' : 'text-theme-light-text'
           }`}>
             Study Guide
           </span>
@@ -139,8 +139,8 @@ export function TableOfContents({
                           ? 'bg-blue-900 text-blue-200'
                           : 'bg-blue-100 text-blue-800'
                         : isDarkMode
-                          ? 'text-gray-300 hover:bg-gray-700'
-                          : 'text-gray-600 hover:bg-gray-100'
+                          ? 'text-theme-dark-text hover:bg-gray-800'
+                          : 'text-theme-light-text hover:bg-gray-100'
                     }`}
                   >
                     <span className="text-sm">{section.title}</span>

@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { X, Plus, Trash2, Edit3, Calendar, Tag } from 'lucide-react';
+import { useState } from 'react';
+import { X, Plus, Trash2, Edit3, Calendar, FileText } from 'lucide-react';
 
 interface Note {
   id: string;
@@ -38,7 +38,6 @@ export function NotesPanel({ isOpen, onClose, isDarkMode }: NotesPanelProps) {
       updatedAt: new Date()
     }
   ]);
-  const [editingNote, setEditingNote] = useState<string | null>(null);
   const [newNote, setNewNote] = useState({ title: '', content: '', section: '', tags: '' });
   const [showNewNoteForm, setShowNewNoteForm] = useState(false);
 
@@ -85,16 +84,16 @@ export function NotesPanel({ isOpen, onClose, isDarkMode }: NotesPanelProps) {
 
       {/* Panel */}
       <div className={`relative ml-auto w-96 h-full shadow-2xl ${
-        isDarkMode ? 'bg-gray-800' : 'bg-white'
+        isDarkMode ? 'bg-theme-dark-bg' : 'bg-theme-light-bg'
       }`}>
         {/* Header */}
         <div className={`flex items-center justify-between p-4 border-b ${
-          isDarkMode ? 'border-gray-700' : 'border-gray-200'
+          isDarkMode ? 'border-gray-800' : 'border-gray-200'
         }`}>
           <div className="flex items-center space-x-2">
             <Edit3 className="w-5 h-5 text-emerald-600" />
             <h2 className={`font-semibold ${
-              isDarkMode ? 'text-gray-100' : 'text-gray-900'
+              isDarkMode ? 'text-theme-dark-text' : 'text-theme-light-text'
             }`}>
               Study Notes
             </h2>
@@ -122,7 +121,7 @@ export function NotesPanel({ isOpen, onClose, isDarkMode }: NotesPanelProps) {
         {/* New Note Form */}
         {showNewNoteForm && (
           <div className={`p-4 border-b ${
-            isDarkMode ? 'border-gray-700 bg-gray-750' : 'border-gray-200 bg-gray-50'
+            isDarkMode ? 'border-gray-800 bg-gray-900' : 'border-gray-200 bg-gray-50'
           }`}>
             <input
               type="text"
@@ -131,8 +130,8 @@ export function NotesPanel({ isOpen, onClose, isDarkMode }: NotesPanelProps) {
               placeholder="Note title..."
               className={`w-full p-2 mb-2 border rounded-md text-sm ${
                 isDarkMode 
-                  ? 'bg-gray-700 border-gray-600 text-gray-100'
-                  : 'bg-white border-gray-300 text-gray-900'
+                  ? 'bg-theme-dark-bg border-gray-700 text-theme-dark-text'
+                  : 'bg-theme-light-bg border-gray-300 text-theme-light-text'
               }`}
             />
             <textarea
@@ -142,8 +141,8 @@ export function NotesPanel({ isOpen, onClose, isDarkMode }: NotesPanelProps) {
               rows={3}
               className={`w-full p-2 mb-2 border rounded-md text-sm resize-none ${
                 isDarkMode 
-                  ? 'bg-gray-700 border-gray-600 text-gray-100'
-                  : 'bg-white border-gray-300 text-gray-900'
+                  ? 'bg-theme-dark-bg border-gray-700 text-theme-dark-text'
+                  : 'bg-theme-light-bg border-gray-300 text-theme-light-text'
               }`}
             />
             <input
@@ -153,8 +152,8 @@ export function NotesPanel({ isOpen, onClose, isDarkMode }: NotesPanelProps) {
               placeholder="Tags (comma-separated)..."
               className={`w-full p-2 mb-3 border rounded-md text-sm ${
                 isDarkMode 
-                  ? 'bg-gray-700 border-gray-600 text-gray-100'
-                  : 'bg-white border-gray-300 text-gray-900'
+                  ? 'bg-theme-dark-bg border-gray-700 text-theme-dark-text'
+                  : 'bg-theme-light-bg border-gray-300 text-theme-light-text'
               }`}
             />
             <div className="flex justify-end space-x-2">
@@ -162,8 +161,8 @@ export function NotesPanel({ isOpen, onClose, isDarkMode }: NotesPanelProps) {
                 onClick={() => setShowNewNoteForm(false)}
                 className={`px-3 py-1 text-sm rounded-md transition-colors ${
                   isDarkMode 
-                    ? 'text-gray-300 hover:bg-gray-700'
-                    : 'text-gray-600 hover:bg-gray-200'
+                    ? 'text-theme-dark-text hover:bg-gray-800'
+                    : 'text-theme-light-text hover:bg-gray-200'
                 }`}
               >
                 Cancel
@@ -184,19 +183,19 @@ export function NotesPanel({ isOpen, onClose, isDarkMode }: NotesPanelProps) {
             {notes.map((note) => (
               <div key={note.id} className={`p-4 rounded-lg border transition-colors ${
                 isDarkMode 
-                  ? 'bg-gray-700 border-gray-600'
-                  : 'bg-white border-gray-200'
+                  ? 'bg-gray-800 border-gray-700'
+                  : 'bg-theme-light-bg border-gray-200'
               }`}>
                 <div className="flex items-start justify-between mb-2">
                   <h3 className={`font-medium text-sm ${
-                    isDarkMode ? 'text-gray-100' : 'text-gray-900'
+                    isDarkMode ? 'text-theme-dark-text' : 'text-theme-light-text'
                   }`}>
                     {note.title}
                   </h3>
                   <button
                     onClick={() => deleteNote(note.id)}
                     className={`p-1 rounded hover:bg-opacity-80 transition-colors ${
-                      isDarkMode ? 'hover:bg-gray-600' : 'hover:bg-gray-100'
+                      isDarkMode ? 'hover:bg-gray-700' : 'hover:bg-gray-100'
                     }`}
                   >
                     <Trash2 className="w-4 h-4 text-red-500" />
@@ -204,7 +203,7 @@ export function NotesPanel({ isOpen, onClose, isDarkMode }: NotesPanelProps) {
                 </div>
                 
                 <p className={`text-sm mb-3 leading-relaxed ${
-                  isDarkMode ? 'text-gray-300' : 'text-gray-600'
+                  isDarkMode ? 'text-theme-dark-text' : 'text-theme-light-text'
                 }`}>
                   {note.content}
                 </p>
@@ -216,8 +215,8 @@ export function NotesPanel({ isOpen, onClose, isDarkMode }: NotesPanelProps) {
                         key={tag}
                         className={`px-2 py-1 text-xs rounded-full ${
                           isDarkMode 
-                            ? 'bg-gray-600 text-gray-200'
-                            : 'bg-gray-100 text-gray-700'
+                            ? 'bg-gray-700 text-theme-dark-text'
+                            : 'bg-gray-100 text-theme-light-text'
                         }`}
                       >
                         #{tag}
